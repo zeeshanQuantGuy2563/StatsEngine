@@ -1,0 +1,17 @@
+# Virtual environments & Conda
+venv/
+env/
+
+# Python compiled files
+__pycache__/
+*.pyc
+
+# Build artifacts & package metadata
+*.egg-info/
+dist/
+build/
+
+# IDE / OS junk
+.DS_Store
+.vscode/
+.idea/
