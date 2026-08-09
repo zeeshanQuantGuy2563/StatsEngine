@@ -38,6 +38,14 @@ class DiscreteDisrtibutions:
     
     @staticmethod
     def poission_pdf(x : int, lamda : float) -> float:
+        "For the probability a point x {P(X=x)}"
+        if(x < 0 or lamda <= 0):
+            return 0.0
+        
+        return float((lamda**x * np.exp(-lamda)) / _factorial(x))
+    
+    @staticmethod
+    def poission_cdf(x : int, lamda : float) -> float:
         pass
 
 class ContinuousDistributions:
