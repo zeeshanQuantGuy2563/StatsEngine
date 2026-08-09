@@ -5,20 +5,24 @@ import numpy as np
 # ======================================================
 
 def _factorial(n : int) -> float:
-    if(n==0):
+    if(n<0):
+        return 0.0
+    elif(n == 0 or n ==1):
         return 1.0
+    
     return float(np.prod(np.arange(1, n+1, dtype=np.float64)))
 
 def _combination(n : int, r : int) -> float:
     if (r<0 or r>n):
         return 0.0
-    elif(r ==0 or r == n):
+    elif(r == 0 or r == n):
         return 1
+    
     k=min(n,n-r)
     numerator=np.prod(np.arange(n-k+1,n+1, dtype=np.float64))
     denominator=np.prod(np.arange(1, k, dtype=np.float64))
 
-    return numerator/denominator
+    return (numerator/denominator)
 
 def _simpsons_rule(func, a : float, b : float, n : int = 1000):
     if(a>=b):
